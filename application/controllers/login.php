@@ -22,7 +22,7 @@ class login extends CI_Controller
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             
-            $users = $this->users->get_users($username);
+            $users = $this->users->get_user($username);
             
             if ($users && password_verify($password, $users->password)) {
                 $this->session->set_userdata('fullname', $users->fullname);

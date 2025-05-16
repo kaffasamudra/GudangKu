@@ -1,7 +1,7 @@
 <?php
 class M_user extends CI_Model
 {
-	function get_admin($username) {
+	function get_user($username) {
 		$where = array(
 			'username' => $username,
 		);
