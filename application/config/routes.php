@@ -12,3 +12,4 @@ $route['dashboard'] = "dashboard/index";
 $route['barang'] = "barang/index";
 $route['jenis'] = "jenis_barang/index";
 $route['regis'] = "login/regis";
+$route['admin'] = "admin/index";

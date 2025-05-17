@@ -11,36 +11,45 @@ class login extends CI_Controller
         $this->load->view('login');
     }
 
-    public function login() {
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+public function login() {
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('username', 'Username', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('login');
-        } else {
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
-            
-            $users = $this->users->get_user($username);
-            
-            if ($users && password_verify($password, $users->password)) {
+    if ($this->form_validation->run() == FALSE) {
+        $this->load->view('login');
+    } else {
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        
+        $users = $this->users->get_user($username);
+        
+        if ($users) {
+            if ($users->is_active !== 'on') {
+                $this->session->set_flashdata('error', 'Akun Anda belum diaktifkan.');
+                redirect('login');
+            }
+
+            if (password_verify($password, $users->password)) {
                 $this->session->set_userdata('fullname', $users->fullname);
                 $this->session->set_userdata('role', $users->role);
 
-                // Redirect based on role
                 if ($users->role == 'users') {
                     redirect('dashboard');
                 } else if ($users->role == 'admin') {
                     redirect('admin');
                 }
-                echo $users->role;
             } else {
-                $this->session->set_flashdata('error', 'Invalid username or password');
+                $this->session->set_flashdata('error', 'Password salah.');
                 redirect('login');
             }
+        } else {
+            $this->session->set_flashdata('error', 'Username tidak ditemukan.');
+            redirect('login');
         }
     }
+}
+
 
     public function regis()
     {
