@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Jenis Barang</title>
+    <title>Manajemen User</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url("assets/bootstrap/") ?>css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
@@ -31,19 +31,13 @@
                         <a href="<?= base_url('dashboard') ?>" class="sidebar-link"><i class="fa-solid fa-home pe-2"></i>Dashboard</a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= base_url('barang') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
+                        <a href="<?= base_url('admin') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
                             aria-expanded="false"><i class="fa-solid fa-ticket pe-2"></i>
-                            Data Barang
+                            Manajemen Barang
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= base_url('jenis') ?>" class="sidebar-link collapsed" data-bs-target="#auth" 
-                            aria-expanded="false"><i class="fa-solid fa-list pe-2"></i>
-                            Data Jenis Barang
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="<?= site_url('login/logout'); ?>" class="sidebar-link collapsed">Logout</a>
+                        <a href="<?= site_url('login/logout'); ?>" class="sidebar-link collapsed"><i class="fa-solid fa-list pe-2"></i>Logout</a>
                     </li>
                 </ul>
             </div>
