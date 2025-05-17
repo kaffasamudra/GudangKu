@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 16, 2025 at 01:56 PM
+-- Generation Time: May 17, 2025 at 02:33 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -83,9 +83,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `fullname`, `is_active`, `role`) VALUES
-(1, 'kaffa87', '123456', 'kaffa samudra', 'on', 'users'),
-(2, 'kaffa', '$2y$10$3uvYX4b.QYf9HbX7ODhXOOrqgDgwFKe80yFTTYGlgw8O66fj6yZA6', 'kaffa ', 'off', 'users'),
-(3, 'kaffaaa', '$2y$10$PVgZHaVOMAOi6m6opnnEMewanVYiyyqdRfmN/Sv9ceS67jxFYxhLm', 'kaffa', 'off', 'users');
+(3, 'kaffaaa', '$2y$10$PVgZHaVOMAOi6m6opnnEMewanVYiyyqdRfmN/Sv9ceS67jxFYxhLm', 'kaffa', 'on', 'users'),
+(4, 'angelia', '$2y$10$/FP9IVpqAXKYYOV33rvT9O25.gTSNdlbk3vnfFW4hWYqmkK4l.NeG', 'angelia sonata', 'on', 'admin'),
+(5, 'kapa8778', '$2y$10$F09uyyAFRB5S5nahiFgfke9ll0Y2aB3DU9f2XVXtbwO2cwV8HltHy', 'kaffa samudra', 'on', 'users'),
+(6, 'kaffa123', '$2y$10$0l5mO/sEdGUnbIy0gZ.Cz.QFyWSSEnd5c.bhw.CmP9IWAPw5AxHne', 'kaffa samudra', 'on', 'users');
 
 --
 -- Indexes for dumped tables
@@ -130,7 +131,7 @@ ALTER TABLE `jenis_barang`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
